@@ -6,32 +6,32 @@ dirssh=""               #DIRECCION DONDE SE ALMACENA EN EL REMOTO
 compare=""              #OPCION DE --compane-dest del comando scp
 
 function completasubir(){
-    rsync -avh $dir $user+"@"+$ip+":"+$dirssh
+    rsync -avh $dir $user"@"$ip":"$dirssh
     exit 0
 }
 
 function incrementalsubir(){
     mkdir copia
-    rsync -avh --compare-dest=$compare $dir $pwd+"/copia"
-    scp $dir $user+"@"+$ip+":"+$dirssh
+    rsync -avh --compare-dest=$compare $dir $pwd"/copia"
+    scp $dir $user"@"$ip":"$dirssh
     rm -r copia
     exit 0
 }
 
 function completa(){
-    echo "se guarda en " +$pwd
+    echo "se guarda en " $pwd
     rsync -avh $dir $pwd
     exit 0
 }
 
 function incremental(){
     mkdir copia
-    rsync -avh --compare-dest=$compare $dir $pwd+"/copia"
+    rsync -avh --compare-dest=$compare $dir $pwd"/copia"
     exit 0
 }
 
 function subir(){
-    scp $dir $user+"@"+$ip+":"+$dirssh
+    scp $dir $user"@"$ip":"$dirssh
     exit 0
 }
 
