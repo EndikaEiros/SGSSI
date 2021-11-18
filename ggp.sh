@@ -27,7 +27,7 @@ crearclave(){
 CifraryFirmar(){
     gpg --encrypt --sign -r correo archivo
 }
-5) encriptarClace
+#5) encriptarClace
 encriptarClace(){
     gpg -c archivo
 }
@@ -55,6 +55,7 @@ function main(){
         echo -e "2) verificar "
         echo -e "3) crearclave    "
         echo -e "4) habilitarCambios    "
+	echo -e "5) encriptarClace    "
 	   echo -e "9) Fin  "
         
         echo ""
@@ -67,10 +68,10 @@ function main(){
             2) verificar;;
             3) crearclave;;
             4) habilitarCambios;;
-            5) fin;;
+            5) encriptarClace;;
 		
 		
-		  6) fin;;
+		  9) fin;;
         *) ;;
 
     	esac
