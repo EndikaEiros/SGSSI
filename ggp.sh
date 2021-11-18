@@ -13,7 +13,7 @@ anadirclave(){
 
 #2) verificar
 verificar(){
-    gpg --verify ARCHIVO.asc
+    gpg --verify ARCHIVO.gpg
 }
 
 
